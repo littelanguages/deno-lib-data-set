@@ -1,4 +1,4 @@
-name: Test Deno Library Data.Sets
+name: Test Deno Library Data.Set
 
 on:
   push:
@@ -15,15 +15,15 @@ jobs:
         deno-version: [1.3.0]
 
     steps:
-      - name: Git Checkout Deno Module
+      - name: Checkout
         uses: actions/checkout@v2
       - name: Use Deno Version ${{ matrix.deno-version }}
         uses: denolib/setup-deno@v2
         with:
           deno-version: ${{ matrix.deno-version }}
-      - name: Lint Deno Module
+      - name: Lint Data.Set
         run: deno fmt --check
-      - name: Build Deno Module
+      - name: Build Data.Set
         run: deno run --reload mod.ts
-      - name: Test Deno Module
+      - name: Test Data.Set
         run: deno test --allow-none
