@@ -112,7 +112,9 @@ export function isSubsetOf<T>(a: Set<T>, b: Set<T>): boolean {
 /**
  * Returns whether or not `a` and `b` are the same.  In this library equality is defined as
  * 
- *     isEqual(a, b) == isSubsetOf(a, b) && isSubsetOf(b, a)
+ * ```typescript
+ * isEqual(a, b) == isSubsetOf(a, b) && isSubsetOf(b, a)
+ * ```
  */
 export function isEqual<T>(a: Set<T>, b: Set<T>): boolean {
   return a.size == b.size && isSubsetOf(a, b) && isSubsetOf(b, a);
@@ -147,16 +149,20 @@ export function asArray<T>(s: Set<T>): Array<T> {
 /**
  * This type is used to represent the contents of a set.  So the set {1, 2, 3, 6, 7, 10, 11, 12} can be represented as
  * 
+ * ```
  *     1-3, 6, 7, 10-12
+ * ```
  * 
  * This is then encoded as an array composed of `SetRange` elements
  * 
- *     [[1, 3], 6, 7, [10, 12]]
+ * ```typescript
+ * [[1, 3], 6, 7, [10, 12]]
+ * ```
  */
 export type SetRange = number | [number, number];
 
 /**
- * Returns `s` as an array of [[SetRange]] elements.
+ * Returns `s` as an array of [SetRange] elements.
  */
 export function asRanges(s: Set<number>): Array<SetRange> {
   const result: Array<SetRange> = [];
