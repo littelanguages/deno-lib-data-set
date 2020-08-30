@@ -109,7 +109,7 @@ export function isSubsetOf<T>(a: Set<T>, b: Set<T>): boolean {
 /**
  * Returns whether or not `a` and `b` are the same.  In this library equality is defined as
  * 
- * ```typescript
+ * ```js
  * isEqual(a, b) == isSubsetOf(a, b) && isSubsetOf(b, a)
  * ```
  */
@@ -152,7 +152,7 @@ export function asArray<T>(s: Set<T>): Array<T> {
  * 
  * This is then encoded as an array composed of `SetRange` elements
  * 
- * ```typescript
+ * ```js
  * [[1, 3], 6, 7, [10, 12]]
  * ```
  */
