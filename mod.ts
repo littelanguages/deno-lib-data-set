@@ -20,9 +20,6 @@ export function setOf<T>(v: T | Array<T>): Set<T> {
 
 /**
  * Constructs a set of numbers composed of the values in the range `from`..`to`.  Note if `from` is greater than `to` then an empty set is returned.
- * 
- * @param from inclusive start of the range
- * @param to inclusive end of the range
  */
 export function rangeSet(from: number, to: number): Set<number> {
   if (from < to) {
@@ -150,7 +147,7 @@ export function asArray<T>(s: Set<T>): Array<T> {
  * This type is used to represent the contents of a set.  So the set {1, 2, 3, 6, 7, 10, 11, 12} can be represented as
  * 
  * ```
- *     1-3, 6, 7, 10-12
+ * 1-3, 6, 7, 10-12
  * ```
  * 
  * This is then encoded as an array composed of `SetRange` elements
