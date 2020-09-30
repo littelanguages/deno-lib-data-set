@@ -1,6 +1,7 @@
 import { assertEquals } from "https://deno.land/std@0.68.0/testing/asserts.ts";
 import {
   emptySet,
+  filter,
   isEmpty,
   setOf,
   rangeSet,
@@ -86,4 +87,11 @@ Deno.test("asRanges", () => {
     asRanges(setOf([1, 2, 3, 5, 6, 7, 9, 10])),
     [[1, 3], [5, 7], 9, 10],
   );
+});
+
+Deno.test("filter", () => {
+  assertEquals(filter((e) => true, emptySet), emptySet);
+  assertEquals(filter((e) => true, rangeSet(1, 5)), rangeSet(1, 5));
+  assertEquals(filter((e) => e < 5, rangeSet(1, 5)), rangeSet(1, 4));
+  assertEquals(filter((e) => e < 5, rangeSet(10, 20)), emptySet);
 });

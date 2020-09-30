@@ -192,3 +192,9 @@ export function asRanges(s: Set<number>): Array<SetRange> {
 
   return result;
 }
+
+/**
+ * Returns a filtered set containing only those elements in `s` where the predicate `p` is satisfied.
+ */
+export const filter = <S>(p: (e: S) => boolean, s: Set<S>) =>
+  setOf([...s].filter(p));
