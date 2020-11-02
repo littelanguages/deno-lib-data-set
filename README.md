@@ -19,3 +19,5 @@ Two script can be found inside `~/.bin`
 |--------|----------------------------------|
 | etl.sh | Runs an edit-test-loop - loops indefinately running all of the tests whenever a source file has changed. |
 | test.sh | Runs lint on the source code and executes the automated tests. |
+
+These scripts but always be run out of the project's root directory.  When using [Visual Studio Code](https://code.visualstudio.com) I run this scripts using a shell running inside the container.
