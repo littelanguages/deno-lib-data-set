@@ -1,16 +1,16 @@
 import { assertEquals } from "https://deno.land/std@0.68.0/testing/asserts.ts";
 import {
+  asRanges,
   emptySet,
   filter,
-  isEmpty,
-  setOf,
-  rangeSet,
   intersection,
-  minus,
-  isSubsetOf,
-  union,
+  isEmpty,
   isEqual,
-  asRanges,
+  isSubsetOf,
+  minus,
+  rangeSet,
+  setOf,
+  union,
 } from "./mod.ts";
 
 Deno.test("setOf", () => {
